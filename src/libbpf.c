@@ -6875,6 +6875,8 @@ __bpf_object__open(const char *path, const void *obj_buf, size_t obj_buf_sz,
 	char tmp_name[64];
 	int err;
 
+	pr_warn("Using custom libbpf library...\n");
+
 	if (elf_version(EV_CURRENT) == EV_NONE) {
 		pr_warn("failed to init libelf for %s\n",
 			path ? : "(mem buf)");
